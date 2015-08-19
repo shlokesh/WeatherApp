@@ -23,9 +23,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.lokesh.weatherinfo.WeatherInfoFragment"
-            android:label="Weather Information" >
+            android:name="com.lokesh.weatherinfo.Settings.SettingActivity"
+            android:label="Settings"
+            android:theme="@style/SettingsTheme" >
         </activity>
+        <activity
+            android:name="android.support.v7.widget.TestActivity"
+            android:label="RecyclerViewTestActivity" />
     </application>
 
 </manifest>

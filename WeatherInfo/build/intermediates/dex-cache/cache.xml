@@ -2,11 +2,25 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
+        <dex dex="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\pre-dexed\debug\classes-cdc0b536598a8eed6f2938bbdf228701340ce871.jar" />
+    </item>
+    <item
         jar="C:\Users\Lokesh\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
         <dex dex="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-f967eeaa401c9242caec9e36ca17634c7b09c78e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4b868b833b0887aa48c4e581558eef4f1196f6a2">
+        <dex dex="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\pre-dexed\debug\classes-08fa2a5bc845817510bf77ea7eefb76b2e087170.jar" />
     </item>
     <item
         jar="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
@@ -16,18 +30,18 @@
         <dex dex="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-bcc864166c629e9fdff1f620eff2cc8c55dac32e.jar" />
     </item>
     <item
-        jar="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\pre-dexed\debug\classes-b4d11785e5fefdf78cff97755877195252a7fc7c.jar" />
-    </item>
-    <item
         jar="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="f8efd0096475e0daf054267b61544e10dc776503">
         <dex dex="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\pre-dexed\debug\classes-54f7016cfc725fc3481708149c8d0b8bb8e567f3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\Lokesh\StudioProjects\WeatherInfo\app\build\intermediates\pre-dexed\debug\classes-b4d11785e5fefdf78cff97755877195252a7fc7c.jar" />
     </item>
 
 </items>

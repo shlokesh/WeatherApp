@@ -16,15 +16,16 @@
         <activity
             android:name=".MainActivity"
             android:label="Weather"
+
             >
               <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".WeatherInfoFragment"
-            android:label="Weather Information" >
+        <activity android:name=".Settings.SettingActivity"
+            android:label="Settings"
+            android:theme="@style/SettingsTheme" >
         </activity>
     </application>
 

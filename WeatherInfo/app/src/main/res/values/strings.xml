@@ -2,5 +2,20 @@
 <resources>
 
     <string name="app_name">WeatherApp</string>
-
+    <string name="openDrawer">open Drawer</string>
+    <string name="closeDrawer">Close Drawer</string>
+    <string name="measure_unit">Measure unit</string>
+    <string name="temp_unit">Temperature unit</string>
+    <string name="location">Location</string>
+    <string name="location_pref">Choose the location</string>
+    <string name="location_summary">Current location</string>
+    <string name="temp_summary">Current temperature unit</string>
+    <string-array name="unit_names">
+        <item>°C</item>
+        <item>°F</item>
+    </string-array>
+    <string-array name="unit_values">
+        <item>c</item>
+        <item>f</item>
+    </string-array>
 </resources>

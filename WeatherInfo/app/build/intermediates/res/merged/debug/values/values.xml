@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string-array name="unit_names">
+        <item>°C</item>
+        <item>°F</item>
+    </string-array>
+    <string-array name="unit_values">
+        <item>c</item>
+        <item>f</item>
+    </string-array>
     <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
@@ -85,6 +95,7 @@
     <declare-styleable name="ActionMenuView"/>
     <declare-styleable name="ActionMode"><attr name="titleTextStyle"/><attr name="subtitleTextStyle"/><attr name="background"/><attr name="backgroundSplit"/><attr name="height"/><attr format="reference" name="closeItemLayout"/></declare-styleable>
     <declare-styleable name="ActivityChooserView"><attr format="string" name="initialActivityCount"/><attr format="reference" name="expandActivityOverflowButtonDrawable"/></declare-styleable>
+    <declare-styleable name="CircleImageView"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/></declare-styleable>
     <declare-styleable name="CompatTextView"><attr format="reference|boolean" name="textAllCaps"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="topBottomBarArrowSize"/><attr format="dimension" name="middleBarArrowSize"/><attr format="dimension" name="barSize"/><attr format="dimension" name="thickness"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat"><attr name="android:orientation"/><attr name="android:gravity"/><attr name="android:baselineAligned"/><attr name="android:baselineAlignedChildIndex"/><attr name="android:weightSum"/><attr format="boolean" name="measureWithLargestChild"/><attr name="divider"/><attr name="showDividers"><flag name="none" value="0"/><flag name="beginning" value="1"/><flag name="middle" value="2"/><flag name="end" value="4"/></attr><attr format="dimension" name="dividerPadding"/></declare-styleable>
@@ -176,6 +187,14 @@
     <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">WeatherApp</string>
+    <string name="closeDrawer">Close Drawer</string>
+    <string name="location">Location</string>
+    <string name="location_pref">Choose the location</string>
+    <string name="location_summary">Current location</string>
+    <string name="measure_unit">Measure unit</string>
+    <string name="openDrawer">open Drawer</string>
+    <string name="temp_summary">Current temperature unit</string>
+    <string name="temp_unit">Temperature unit</string>
     <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat">
@@ -1113,6 +1132,17 @@
     <style name="RtlOverlay.Widget.AppCompat.SearchView.MagIcon" parent="android:Widget">
         <item name="android:layout_marginLeft">@dimen/abc_dropdownitem_text_padding_left</item>
     </style>
+    <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="SettingsTheme" parent="style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>
     <style name="TextAppearance.AppCompat.Body2" parent="Base.TextAppearance.AppCompat.Body2"/>
