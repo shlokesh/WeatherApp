@@ -11,26 +11,26 @@ public class Weather {
 	
 	
 	public  class Temperature {
-		private float temp;
-		private float min_temp;
-		private float max_temp;
+		private double temp;
+		private double min_temp;
+		private double max_temp;
 		
-		public float getTemp() {
+		public double getTemp() {
 			return temp;
 		}
-		public void setTemp(float temp) {
+		public void setTemp(double temp) {
 			this.temp = temp;
 		}
-		public float getMinTemp() {
+		public double getMinTemp() {
 			return min_temp;
 		}
-		public void setMinTemp(float minTemp) {
+		public void setMinTemp(double minTemp) {
 			this.min_temp = minTemp;
 		}
-		public float getMaxTemp() {
+		public double getMaxTemp() {
 			return max_temp;
 		}
-		public void setMaxTemp(float maxTemp) {
+		public void setMaxTemp(double maxTemp) {
 			this.max_temp = maxTemp;
 		}
 		
@@ -133,5 +133,12 @@ public class Weather {
 		}
 				
 	}
+
+    @Override
+    public String toString() {
+        return "Weather{" + placeInfo + "}";
+
+    }
+
 
 }

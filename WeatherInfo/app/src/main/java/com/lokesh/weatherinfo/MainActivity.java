@@ -2,8 +2,11 @@ package com.lokesh.weatherinfo;
 
 import com.lokesh.weatherinfo.Adapter.DrawerAdapter;
 import com.lokesh.weatherinfo.Adapter.ViewPagerAdapter;
+import com.lokesh.weatherinfo.UI.CurrentWeatherFragment;
+import com.lokesh.weatherinfo.UI.ForcastWeatherFragment;
 import com.lokesh.weatherinfo.UI.SlidingTabLayout;
 
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -23,62 +26,58 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
+
 import com.lokesh.weatherinfo.Adapter.DrawerAdapter.OnItemClickListener;
+import com.lokesh.weatherinfo.model.WeatherList;
 
-public class MainActivity extends ActionBarActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends ActionBarActivity implements DrawerAdapter.OnItemClickListener {
 
 
-    ViewPager pager;
-    ViewPagerAdapter adapter;
-    SlidingTabLayout tabs;
-    CharSequence Titles[]={"Current","Forcast"};
-    int Numboftabs =2;
+    private ViewPager pager;
+    private ViewPagerAdapter adapter;
+    private SlidingTabLayout tabs;
+    private ArrayList<Fragment> fragmentList;
 
     private Toolbar toolbar;
+    private TextView message;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private DrawerLayout Drawer;
 
-    RecyclerView mRecyclerView;
-    RecyclerView.Adapter mAdapter;
-    RecyclerView.LayoutManager mLayoutManager;
-    DrawerLayout Drawer;
+    private ActionBarDrawerToggle mDrawerToggle;
 
-    ActionBarDrawerToggle mDrawerToggle;
+    private WeatherList weatherList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        weatherList = WeatherList.getInstance();
+
         String TITLES[] = {"Home","Settings"};
+        int Numboftabs = 2;
         int ICONS[] = {R.drawable.ic_home,R.drawable.ic_setting};
  
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        
-        adapter =  new ViewPagerAdapter(getSupportFragmentManager(),Titles,Numboftabs);
 
- 
+        message = (TextView) findViewById(R.id.message);
+        adapter =  new ViewPagerAdapter(getSupportFragmentManager(),TITLES,Numboftabs);
+
         pager = (ViewPager) findViewById(R.id.pager);
-        pager.setAdapter(adapter);
- 
-        tabs = (SlidingTabLayout) findViewById(R.id.tabs);
-        tabs.setDistributeEvenly(true);
- 
-        tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
-            @Override
-            public int getIndicatorColor(int position) {
-                return getResources().getColor(R.color.tabsScrollColor);
-            }
-        });
- 
-        tabs.setViewPager(pager);
+        pager.setAdapter(null);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
 
         mRecyclerView.setHasFixedSize(true);
 
-        mAdapter = new DrawerAdapter(TITLES,ICONS,this);
-
-
+        mAdapter = new DrawerAdapter(TITLES,ICONS,this,this);
 
         mRecyclerView.setAdapter(mAdapter);
 
@@ -106,19 +105,21 @@ public class MainActivity extends ActionBarActivity {
         Drawer.setDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
 
-
-
     }
  
- 
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(weatherList.getCurrentWeather()!=null){
+            message.setVisibility(View.GONE);
+            pager.setAdapter(adapter);
+        }
 
+    }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.weather, menu);
-        return true;
-    }
-
+    public void onItemClick(View view,int position){
+        Drawer.closeDrawers();
+}
 
 }

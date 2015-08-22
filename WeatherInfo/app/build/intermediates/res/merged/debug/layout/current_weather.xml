@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
 
-</LinearLayout>
-<!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/layout/current_weather.xml -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:paddingLeft="65dp"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="10dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:id="@+id/tempLayout"
+
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textBig"
+            android:id="@+id/temp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="3dp"
+            android:layout_alignLeft="@id/temp"
+            android:layout_alignRight="@id/temp"
+            android:id="@+id/lineTxt"
+            android:layout_below="@id/temp"
+            android:layout_marginTop="0dp" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/imgWeather"
+            android:layout_toRightOf="@id/temp"
+            android:layout_alignTop="@id/temp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tempUnit"
+            android:layout_alignBaseline="@id/temp"
+            android:layout_toRightOf="@id/temp"
+            android:layout_alignStart="@id/imgWeather"
+            style="@style/textSmall"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/descrWeather"
+            android:layout_below="@id/imgWeather"
+            android:layout_toRightOf="@id/temp"
+            android:layout_alignStart="@id/tempUnit"
+            style="@style/textSmall"/>
+
+
+    </RelativeLayout>
+    <include
+        android:id="@+id/details"
+        layout="@layout/weather_details"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
+</LinearLayout><!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/layout/current_weather.xml -->

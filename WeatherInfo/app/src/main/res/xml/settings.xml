@@ -21,7 +21,7 @@
       <Preference android:title="@string/location_pref"
                   android:key="location">
           <intent android:targetPackage="com.lokesh.weatherinfo"
-                  android:targetClass="com.lokesh.weatherinfo.settings.LocationActivity"
+                  android:targetClass="com.lokesh.weatherinfo.Settings.LocationActivity"
                   />
       </Preference>
   </PreferenceCategory>
@@ -31,6 +31,7 @@
             android:title="@string/temp_unit"
             android:entryValues="@array/unit_values"
             android:entries="@array/unit_names"
+            android:summary="%s"
             android:defaultValue="c" />
 
     </PreferenceCategory>

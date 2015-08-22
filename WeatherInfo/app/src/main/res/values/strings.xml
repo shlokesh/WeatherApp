@@ -10,6 +10,8 @@
     <string name="location_pref">Choose the location</string>
     <string name="location_summary">Current location</string>
     <string name="temp_summary">Current temperature unit</string>
+    <string name="no_location_message">Please add a Location.</string>
+
     <string-array name="unit_names">
         <item>°C</item>
         <item>°F</item>

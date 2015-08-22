@@ -47,5 +47,12 @@ public class PlaceInfo {
 		this.country = country;
 	}
 
+	@Override
+	public String toString() {
+		return "PlaceInfo{" + "longitude=" + longitude + ","
+		+"latitude = " + latitude + ","
+				+"city = " + city + '}';
+	}
 
-}
+	}
+

@@ -46,6 +46,7 @@
     <color name="colorPrimary">#F50057</color>
     <color name="colorPrimaryDark">#C51162</color>
     <color name="color_black">#000000</color>
+    <color name="color_new">#c3eee7</color>
     <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
@@ -152,12 +153,28 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="celcius_bottomPadding">16dp</dimen>
+    <dimen name="celcius_leftPadding">70dp</dimen>
+    <dimen name="celcius_rightPadding">16dp</dimen>
+    <dimen name="celcius_topPadding">30dp</dimen>
+    <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
     <item name="dialog_fixed_width_major" type="dimen">320dp</item>
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="faren_leftPadding">20dp</dimen>
+    <dimen name="text_medium">35sp</dimen>
+    <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
@@ -192,6 +209,7 @@
     <string name="location_pref">Choose the location</string>
     <string name="location_summary">Current location</string>
     <string name="measure_unit">Measure unit</string>
+    <string name="no_location_message">Please add a Location.</string>
     <string name="openDrawer">open Drawer</string>
     <string name="temp_summary">Current temperature unit</string>
     <string name="temp_unit">Temperature unit</string>
@@ -1261,4 +1279,22 @@
     <style name="Widget.AppCompat.Spinner.DropDown.ActionBar" parent="Base.Widget.AppCompat.Spinner.DropDown.ActionBar"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="textBig" parent="@android:style/TextAppearance.Large">
+        <item name="android:textSize">82sp</item>
+        <item name="android:textColor">@color/color_black</item>
+    </style>
+    <style name="textMedium" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/color_black</item>
+    </style>
+    <style name="textSmall" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/color_black</item>
+    </style>
+    <style name="textVerySmall" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">8sp</item>
+        <item name="android:textColor">@color/color_black</item>
+    </style>
 </resources>

@@ -3,17 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".WeatherActivity" >
 
-    <item android:id="@+id/action_search"
-        android:title="search_city"
-        android:orderInCategory="100"
-        app:showAsAction="always"
-        android:icon="@android:drawable/ic_menu_search"/>
-
     <item android:id="@+id/action_refresh"
         android:title="refresh"
         android:orderInCategory="100"
         app:showAsAction="always"
-        android:icon="@android:drawable/ic_menu_slideshow"
+        android:icon="@drawable/ic_action_refresh"
         />
 
 </menu>

@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp">
+    <EditText android:id="@+id/edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+
+        android:textSize="25sp"
+        android:textColor="#000000" />
+
+     <Button
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="0.3"
+         android:id="@+id/search"
+         android:text="Search"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+    </ListView>
+
+</LinearLayout><!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/layout/location_activity.xml -->

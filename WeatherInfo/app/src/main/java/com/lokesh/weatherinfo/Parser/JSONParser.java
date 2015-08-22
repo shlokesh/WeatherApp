@@ -46,9 +46,9 @@ public class JSONParser {
             JSONObject main = getObject("main", jObj);
             weather.currentWeather.setHumidity(getInt("humidity", main));
             weather.currentWeather.setPressure(getInt("pressure", main));
-            weather.temperature.setMaxTemp(getFloat("temp_max", main));
-            weather.temperature.setMinTemp(getFloat("temp_min", main));
-            weather.temperature.setTemp(getFloat("temp", main));
+            weather.temperature.setMaxTemp(getDouble("temp_max", main));
+            weather.temperature.setMinTemp(getDouble("temp_min", main));
+            weather.temperature.setTemp(getDouble("temp", main));
 
 
             JSONObject wind = getObject("wind", jObj);
@@ -75,6 +75,10 @@ public class JSONParser {
 	private static String getString(String tagName, JSONObject jObj) throws JSONException {
 		return jObj.getString(tagName);
 	}
+
+    private static double  getDouble(String tagName, JSONObject jObj) throws JSONException {
+        return jObj.getDouble(tagName);
+    }
 
 	private static float  getFloat(String tagName, JSONObject jObj) throws JSONException {
 		return (float) jObj.getDouble(tagName);

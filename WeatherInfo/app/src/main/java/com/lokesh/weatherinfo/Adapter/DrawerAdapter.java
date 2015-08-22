@@ -24,6 +24,7 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
 
     private String mNavTitles[];
     private int mIcons[];
+    private OnItemClickListener listener;
 
     private String name;
     private int profile;
@@ -31,11 +32,13 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
 
     Context context;
 
-    void startSettingActivity(int position){
+    void handleClick(View v,int position){
         if(position == 2) {
+            listener.onItemClick(v,position);
             Intent i = new Intent();
             i.setClass(context, SettingActivity.class);
             context.startActivity(i);
+
         }
     }
 
@@ -68,7 +71,7 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         @Override
         public void onClick(View v) {
 
-            startSettingActivity(getPosition());
+            handleClick(v,getPosition());
         }
 
 
@@ -76,7 +79,8 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
 
 
 
-    public DrawerAdapter(String Titles[],int Icons[],Context context){
+    public DrawerAdapter(String Titles[],int Icons[],Context context,OnItemClickListener listener){
+        this.listener = listener;
         mNavTitles = Titles;
         mIcons = Icons;
         this.context = context;

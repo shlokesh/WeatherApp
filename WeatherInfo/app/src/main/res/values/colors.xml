@@ -26,4 +26,6 @@
     <color name="colorAccent">#FF80AB</color>
     <color name="tabsScrollColor">#8a140e</color>
 
+    <color name="color_new">#c3eee7</color>
+
 </resources>
