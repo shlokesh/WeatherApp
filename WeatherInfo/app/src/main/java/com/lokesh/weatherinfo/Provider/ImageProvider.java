@@ -1,6 +1,7 @@
 package com.lokesh.weatherinfo.Provider;
 
 import android.graphics.Bitmap;
+import android.widget.ImageView;
 
 import com.android.volley.RequestQueue;
 

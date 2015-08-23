@@ -3,6 +3,7 @@ package com.lokesh.weatherinfo.Provider;
 
 import android.graphics.Bitmap;
 import android.util.Log;
+import android.widget.ImageView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;

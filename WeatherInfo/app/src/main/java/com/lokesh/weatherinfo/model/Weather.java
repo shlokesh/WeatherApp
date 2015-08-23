@@ -94,6 +94,7 @@ public class Weather {
 		private String icon;		
 		private float pressure;
 		private float humidity;
+		private String date;
 		
 		public int getWeatherId() {
 			return weatherId;
@@ -131,6 +132,12 @@ public class Weather {
 		public void setHumidity(float humidity) {
 			this.humidity = humidity;
 		}
+        public void setDate(String date){
+            this.date = date;
+        }
+        public String getDate(){
+            return date;
+        }
 				
 	}
 

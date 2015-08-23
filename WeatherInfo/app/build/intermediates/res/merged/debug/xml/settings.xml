@@ -35,5 +35,15 @@
             android:defaultValue="c" />
 
     </PreferenceCategory>
+    <PreferenceCategory
+        android:summary="Notification summary"
+        android:title="Notifications">
+    <CheckBoxPreference
+        android:key="notification"
+        android:defaultValue="true"
+        android:summary=""
+        android:title="Weather Notification"
+        />
+    </PreferenceCategory>
 
 </PreferenceScreen><!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/xml/settings.xml -->

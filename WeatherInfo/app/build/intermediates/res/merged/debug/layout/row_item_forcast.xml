@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/day"
+        android:layout_marginLeft="30dp"
+        android:text="SUN"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/descrWeather"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/day"
+        android:text="partly cloudy"/>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@+id/descrWeather"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/img"
+        android:src="@drawable/sunrise"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/temp"
+            android:layout_toRightOf="@+id/img"
+            android:text="20C"/>
+    </RelativeLayout>
+<!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/layout/row_item_forcast.xml -->
