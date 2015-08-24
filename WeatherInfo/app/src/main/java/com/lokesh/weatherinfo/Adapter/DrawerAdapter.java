@@ -58,14 +58,11 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
             itemView.setClickable(true);
             itemView.setOnClickListener(this);
 
-
-
             if(ViewType == TYPE_ITEM) {
                 textView = (TextView) itemView.findViewById(R.id.rowText);
                 imageView = (ImageView) itemView.findViewById(R.id.rowIcon);
                 Holderid = 1;
             }
-
         }
 
         @Override
@@ -74,10 +71,7 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
             handleClick(v,getPosition());
         }
 
-
     }
-
-
 
     public DrawerAdapter(String Titles[],int Icons[],Context context,OnItemClickListener listener){
         this.listener = listener;

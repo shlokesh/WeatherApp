@@ -15,17 +15,17 @@ public class Utils {
         Log.d("rinku", "value =" + value);
         String color;
         switch(value){
-            case 0: color = "#FF8080";
-            case 1: color = "#FFE6E6";
-            case 2: color = "#FF5CAD";
-            case 3: color = "#FFAD5C";
-            case 4: color = "#FFFFCC";
-            case 5: color = "#CCFF99";
-            case 6: color = "#CCCCFF";
-            case 7: color = "#CCFFFF";
-            case 8: color = "#BFD3FF";
-            case 9: color = "#CCEBFF";
-            case 10: color = "#66C2FF";
+            case 0: color = "#FF8080"; break;
+            case 1: color = "#FFE6E6"; break;
+            case 2: color = "#FF5CAD"; break;
+            case 3: color = "#FFAD5C"; break;
+            case 4: color = "#FFFFCC"; break;
+            case 5: color = "#CCFF99"; break;
+            case 6: color = "#CCCCFF"; break;
+            case 7: color = "#CCFFFF"; break;
+            case 8: color = "#BFD3FF"; break;
+            case 9: color = "#CCEBFF"; break;
+            case 10: color = "#66C2FF"; break;
             default: color = "#FF8080";
         }
         return color;

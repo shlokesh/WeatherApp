@@ -22,11 +22,13 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Max Temp."
+                style="@style/textSmall"
                 android:layout_weight="0.4"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.4"
+                style="@style/textTempSmall"
                 android:id="@+id/maxTemp" />
 
         </TableRow>
@@ -44,12 +46,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                style="@style/textSmall"
                 android:text="Min Temp."
                 android:layout_weight="0.4"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/minTemp"
+                style="@style/textTempSmall"
                 android:layout_weight="0.4"/>
                "/>
 
@@ -68,12 +72,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                style="@style/textSmall"
                 android:text="Wind"
                 android:layout_weight="0.4"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/wind"
+                style="@style/textTempSmall"
                 android:layout_weight="0.4"
                 />
 
@@ -92,6 +98,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            style="@style/textSmall"
             android:text="Rain"
             android:layout_weight="0.4"/>
         <TextView
@@ -99,7 +106,8 @@
             android:layout_height="match_parent"
             android:id="@+id/rain"
             android:layout_weight="0.4"
-            android:text="pressure value"/>
+            style="@style/textTempSmall"
+            />
 
         </TableRow>
         <TableRow
@@ -116,6 +124,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                style="@style/textSmall"
                 android:text="Humidity"
                 android:layout_weight="0.4"/>
             <TextView
@@ -123,6 +132,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/humidity"
                 android:layout_weight="0.4"
+                style="@style/textTempSmall"
                 android:textAlignment="viewEnd"/>
 
         </TableRow>
@@ -134,6 +144,8 @@
        android:layout_height="wrap_content"
        android:layout_gravity="center_horizontal"
        android:layout_marginTop="10dp"
+       style="@style/textSmall"
        android:id="@+id/time"/>
+
 
 </LinearLayout><!-- From: file:/C:/Users/Lokesh/StudioProjects/WeatherInfo/app/src/main/res/layout/weather_details.xml -->

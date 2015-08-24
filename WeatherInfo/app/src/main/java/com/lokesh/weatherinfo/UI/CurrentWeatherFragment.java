@@ -109,8 +109,8 @@ public class CurrentWeatherFragment extends Fragment {
 
     public void onResume(){
         super.onResume();
-
         location = preference.getString("cityName", null);
+        ((ActionBarActivity) getActivity()).getSupportActionBar().setTitle(location + ", Current");
         tempUnit = preference.getString("temperature", null);
         if("f".equalsIgnoreCase(tempUnit))
             celsius = false;
@@ -151,8 +151,6 @@ public class CurrentWeatherFragment extends Fragment {
             desc.setText(weather.currentWeather.getDescr());
             time.setText("Last Updated :" + sdf.format(cal.getTime()));
             tempLayout.setBackgroundColor(Color.parseColor(color));
-
-            ((ActionBarActivity)getActivity()).getSupportActionBar().setTitle(location + ", Current");
             ((ActionBarActivity) getActivity()).getSupportActionBar()
                     .setBackgroundDrawable(new ColorDrawable(Color.parseColor(color)));
             ImageProviderImpl provider = new ImageProviderImpl();
@@ -165,10 +163,20 @@ public class CurrentWeatherFragment extends Fragment {
                 }
             });
 
+        }else{
+            refreshWeather();
         }
     }
 
-    private void notifyWeather(Weather weather,Bitmap img){
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            ((ActionBarActivity) getActivity()).getSupportActionBar().setTitle(location + ", Current");
+        }
+    }
+
+        private void notifyWeather(Weather weather,Bitmap img){
 
         int icon = R.drawable.weather;
         long when = System.currentTimeMillis();

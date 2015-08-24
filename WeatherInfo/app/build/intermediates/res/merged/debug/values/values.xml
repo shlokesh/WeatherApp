@@ -1286,15 +1286,20 @@
         <item name="android:textColor">@color/color_black</item>
     </style>
     <style name="textMedium" parent="@android:style/TextAppearance.Small">
-        <item name="android:textSize">40sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/color_black</item>
     </style>
     <style name="textSmall" parent="@android:style/TextAppearance.Small">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/color_black</item>
     </style>
-    <style name="textVerySmall" parent="@android:style/TextAppearance.Small">
-        <item name="android:textSize">8sp</item>
+    <style name="textTemp" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/color_black</item>
+    </style>
+    <style name="textTempSmall" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/color_black</item>
     </style>
 </resources>

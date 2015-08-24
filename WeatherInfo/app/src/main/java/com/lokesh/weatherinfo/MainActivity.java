@@ -6,6 +6,8 @@ import com.lokesh.weatherinfo.UI.CurrentWeatherFragment;
 import com.lokesh.weatherinfo.UI.ForcastWeatherFragment;
 import com.lokesh.weatherinfo.UI.SlidingTabLayout;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
@@ -26,6 +28,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lokesh.weatherinfo.Adapter.DrawerAdapter.OnItemClickListener;
@@ -44,12 +47,15 @@ public class MainActivity extends ActionBarActivity implements DrawerAdapter.OnI
 
     private Toolbar toolbar;
     private TextView message;
+    private ImageView nolocation;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private DrawerLayout Drawer;
+    private String location;
 
     private ActionBarDrawerToggle mDrawerToggle;
+    private SharedPreferences preference;
 
     private WeatherList weatherList;
 
@@ -57,6 +63,7 @@ public class MainActivity extends ActionBarActivity implements DrawerAdapter.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        preference = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         weatherList = WeatherList.getInstance();
 
@@ -68,6 +75,7 @@ public class MainActivity extends ActionBarActivity implements DrawerAdapter.OnI
         setSupportActionBar(toolbar);
 
         message = (TextView) findViewById(R.id.message);
+        nolocation = (ImageView) findViewById(R.id.location);
         adapter =  new ViewPagerAdapter(getSupportFragmentManager(),TITLES,Numboftabs);
 
         pager = (ViewPager) findViewById(R.id.pager);
@@ -110,11 +118,12 @@ public class MainActivity extends ActionBarActivity implements DrawerAdapter.OnI
     @Override
     public void onResume(){
         super.onResume();
-        if(weatherList.getCurrentWeather()!=null){
+        location = preference.getString("cityName", null);
+        if(location!=null){
             message.setVisibility(View.GONE);
+            nolocation.setVisibility(View.GONE);
             pager.setAdapter(adapter);
         }
-
     }
 
     @Override

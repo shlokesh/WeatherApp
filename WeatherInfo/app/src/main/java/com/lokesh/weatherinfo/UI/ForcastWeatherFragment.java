@@ -18,10 +18,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-
+import android.support.v7.app.ActionBarActivity;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,6 +42,8 @@ public class ForcastWeatherFragment extends ListFragment  {
     private ListView listView;
     private SharedPreferences prefs;
     private ProgressDialog progressDialog;
+    private ForcastAdapter adapter;
+
     @Override
     public void onCreate(Bundle bundle){
         super.onCreate(bundle);
@@ -46,8 +51,6 @@ public class ForcastWeatherFragment extends ListFragment  {
         preference = PreferenceManager.getDefaultSharedPreferences(getActivity());
         sdf = new SimpleDateFormat("HH:mm:ss a", Locale.getDefault());
         cal = Calendar.getInstance();
-        prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-
         setHasOptionsMenu(true);
     }
 
@@ -64,6 +67,7 @@ public class ForcastWeatherFragment extends ListFragment  {
         super.onActivityCreated(savedInstanceState);
 
         location = preference.getString("cityName", null);
+
         getForcast();
     }
 
@@ -77,17 +81,27 @@ public class ForcastWeatherFragment extends ListFragment  {
     }
 
     private void setAdapter(){
-        ForcastAdapter adapter = new ForcastAdapter(getActivity(),R.layout.row_item_forcast,list);
-        listView.setAdapter(adapter);
+        if(adapter == null) {
+            adapter = new ForcastAdapter(getActivity(), R.layout.row_item_forcast, list);
+            listView.setAdapter(adapter);
+        }else{
+            adapter.clear();
+            if (list != null){
+                for (WeatherForcast object : list) {
+                    adapter.insert(object, adapter.getCount());
+                }
+            }
+            adapter.notifyDataSetChanged();
+        }
     }
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
+            ((ActionBarActivity)getActivity()).getSupportActionBar().setTitle(location + ", Forcast");
             if(list == null){
-                progressDialog = ProgressDialog.show(getActivity(),
-                        "Please wait...", "Loading Forcast Details", true, true);
+               showDialog();
             }
         }
     }
@@ -108,5 +122,26 @@ public class ForcastWeatherFragment extends ListFragment  {
         }
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu,MenuInflater inflater) {
+        // super.onCreateOptionsMenu(inflater,menu);
+        inflater.inflate(R.menu.weather, menu);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_refresh :
+                showDialog();
+                getForcast();
+            default:return true;
+        }
+    }
+
+    private void showDialog(){
+        progressDialog = ProgressDialog.show(getActivity(),
+                "Please wait...", "Loading Forcast Details", true, true);
+    }
 }

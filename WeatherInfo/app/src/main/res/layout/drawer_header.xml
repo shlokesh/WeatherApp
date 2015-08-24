@@ -10,9 +10,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/header"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="35dp"
+        android:src="@drawable/weather"
         android:id="@+id/circleView"
         />
 </RelativeLayout>
