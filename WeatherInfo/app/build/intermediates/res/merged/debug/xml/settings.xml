@@ -37,12 +37,12 @@
     </PreferenceCategory>
     <PreferenceCategory
         android:summary="Notification summary"
-        android:title="Notifications">
+        android:title="@string/notification">
     <CheckBoxPreference
         android:key="notification"
         android:defaultValue="true"
         android:summary=""
-        android:title="Weather Notification"
+        android:title="@string/weather_noti"
         />
     </PreferenceCategory>
 

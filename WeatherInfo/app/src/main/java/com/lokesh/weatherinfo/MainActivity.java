@@ -2,47 +2,35 @@ package com.lokesh.weatherinfo;
 
 import com.lokesh.weatherinfo.Adapter.DrawerAdapter;
 import com.lokesh.weatherinfo.Adapter.ViewPagerAdapter;
-import com.lokesh.weatherinfo.UI.CurrentWeatherFragment;
-import com.lokesh.weatherinfo.UI.ForcastWeatherFragment;
-import com.lokesh.weatherinfo.UI.SlidingTabLayout;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
-import android.view.GestureDetector;
-import android.view.Menu;
 
 import android.support.v4.widget.DrawerLayout;
 
-import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.lokesh.weatherinfo.Adapter.DrawerAdapter.OnItemClickListener;
 import com.lokesh.weatherinfo.model.WeatherList;
+import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends ActionBarActivity implements DrawerAdapter.OnItemClickListener {
 
 
     private ViewPager pager;
     private ViewPagerAdapter adapter;
-    private SlidingTabLayout tabs;
     private ArrayList<Fragment> fragmentList;
 
     private Toolbar toolbar;
@@ -56,7 +44,7 @@ public class MainActivity extends ActionBarActivity implements DrawerAdapter.OnI
 
     private ActionBarDrawerToggle mDrawerToggle;
     private SharedPreferences preference;
-
+    private CirclePageIndicator titleIndicator;
     private WeatherList weatherList;
 
     @Override
@@ -79,21 +67,15 @@ public class MainActivity extends ActionBarActivity implements DrawerAdapter.OnI
         adapter =  new ViewPagerAdapter(getSupportFragmentManager(),TITLES,Numboftabs);
 
         pager = (ViewPager) findViewById(R.id.pager);
+        titleIndicator = (CirclePageIndicator)findViewById(R.id.titles);
         pager.setAdapter(null);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
-
         mRecyclerView.setHasFixedSize(true);
-
         mAdapter = new DrawerAdapter(TITLES,ICONS,this,this);
-
         mRecyclerView.setAdapter(mAdapter);
-
         mLayoutManager = new LinearLayoutManager(this);
-
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-
         Drawer = (DrawerLayout) findViewById(R.id.DrawerLayout);
         mDrawerToggle = new ActionBarDrawerToggle(this,Drawer,toolbar,R.string.openDrawer,R.string.closeDrawer){
 
@@ -123,6 +105,10 @@ public class MainActivity extends ActionBarActivity implements DrawerAdapter.OnI
             message.setVisibility(View.GONE);
             nolocation.setVisibility(View.GONE);
             pager.setAdapter(adapter);
+            titleIndicator.setFillColor(Color.BLACK);
+            titleIndicator.setPageColor(Color.RED);
+            titleIndicator.setViewPager(pager);
+
         }
     }
 

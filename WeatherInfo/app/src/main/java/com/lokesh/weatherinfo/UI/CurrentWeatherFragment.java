@@ -75,6 +75,7 @@ public class CurrentWeatherFragment extends Fragment {
     private NotificationManager notificationManager;
     private double temperature;
     private Bitmap weatherBitmap;
+    private String description;
     public static final int DIALOG_LOADING = 1;
 
     @Override
@@ -182,9 +183,11 @@ public class CurrentWeatherFragment extends Fragment {
         long when = System.currentTimeMillis();
         Notification notification = new Notification(icon, "Weather Info", when);
 
+        description = weather.currentWeather.getDescr();
+        description  = description.substring(0, 1).toUpperCase() + description.substring(1);
         RemoteViews contentView = new RemoteViews(getActivity().getPackageName(), R.layout.notification);
         contentView.setImageViewBitmap(R.id.notification_image, img);
-        contentView.setTextViewText(R.id.notification_condition, weather.currentWeather.getDescr());
+        contentView.setTextViewText(R.id.notification_condition, description);
         contentView.setTextViewText(R.id.notification_updated, location);
         contentView.setTextViewText(R.id.notification_degrees, String.valueOf((int)temperature) + "°");
         notification.contentView = contentView;
@@ -193,8 +196,7 @@ public class CurrentWeatherFragment extends Fragment {
 
     private void refreshWeather() {
         if(location != null) {
-            progressDialog = ProgressDialog.show(getActivity(),
-                    "Please wait...", "Refreshing Weather Details.", true, true);
+            showDialog();
             WeatherProvider.getWeather(location, requestQueue, new WeatherProvider.WeatherClientListener() {
                 @Override
                 public void onWeatherResponse(Weather weather) {
@@ -208,6 +210,11 @@ public class CurrentWeatherFragment extends Fragment {
                 }
             });
         }
+    }
+
+    private void showDialog(){
+        progressDialog = ProgressDialog.show(getActivity(),
+                "Please wait...", "Fetching Weather Details.", true, true);
     }
 
     @Override

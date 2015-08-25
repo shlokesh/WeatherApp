@@ -11,6 +11,15 @@
     <string name="location_summary">Current location</string>
     <string name="temp_summary">Current temperature unit</string>
     <string name="no_location_message">Please add a Location.</string>
+    <string name="maxtemp">Max Temp.</string>
+    <string name="mintemp">Min Temp.</string>
+    <string name="wind">Wind</string>
+    <string name="rain">Rain</string>
+    <string name="humidity">Humidity</string>
+    <string name="weather_noti">Weather Notification</string>
+    <string name="notification">Notifications</string>
+
+
 
     <string-array name="unit_names">
         <item>°C</item>

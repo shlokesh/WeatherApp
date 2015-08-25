@@ -43,7 +43,7 @@ public class SettingActivity extends PreferenceActivity implements OnSharedPrefe
 
         String city =  prefs.getString("cityName", null) != null ?  prefs.getString("cityName", null).toUpperCase() : " Not Set";
 
-        prefLocation.setSummary(getResources().getText(R.string.location_summary) + "-" + city);
+        prefLocation.setSummary(getResources().getText(R.string.location_summary) + " - " + city);
 
         String unit =  prefs.getString("temperature", null) != null ? "°" + prefs.getString("temperature", null).toUpperCase() : "";
         prefTemp.setSummary(getResources().getText(R.string.temp_summary) + " " + unit);

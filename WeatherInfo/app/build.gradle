@@ -31,6 +31,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'de.hdodenhof:circleimageview:1.2.1'
     compile 'com.android.support:recyclerview-v7:21.0.+'
+    compile project(':library')
     compile project (':volley')
     compile (
             [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.4.1'],

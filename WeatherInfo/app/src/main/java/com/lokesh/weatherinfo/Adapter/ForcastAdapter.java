@@ -37,6 +37,7 @@ public class ForcastAdapter extends ArrayAdapter<WeatherForcast> {
     private Bitmap mPlaceHolderBitmap;
     private String tempUnit;
     private double temperature;
+    private String description;
     private SharedPreferences preference;
 
     public ForcastAdapter(Context c,int resourceId, ArrayList<WeatherForcast> list){
@@ -79,7 +80,9 @@ public class ForcastAdapter extends ArrayAdapter<WeatherForcast> {
 
         WeatherForcast forcast = list.get(position);
         viewHolder.day.setText(forcast.getDate());
-        viewHolder.desc.setText(forcast.getDescr());
+        description = forcast.getDescr();
+        description  = description.substring(0, 1).toUpperCase() + description.substring(1);
+        viewHolder.desc.setText(description);
         temperature = forcast.getTemp() - 273.5;
         if("f".equalsIgnoreCase(tempUnit)){
             temperature = (1.8 * temperature) + 32.0;

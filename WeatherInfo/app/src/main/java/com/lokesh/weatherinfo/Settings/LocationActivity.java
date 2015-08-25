@@ -78,27 +78,20 @@ public class LocationActivity  extends ListActivity implements View.OnClickListe
     private void displayResult(String city){
         String[] result = {city};
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, result);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, result);
         setListAdapter(adapter);
     }
 
              @Override
              protected void onListItemClick(ListView l, View v, int position, long id) {
-
                  super.onListItemClick(l, v, position, id);
-
                  int itemPosition = position;
-
                  String itemValue = (String) l.getItemAtPosition(position);
-
                  SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-
                  SharedPreferences.Editor editor = prefs.edit();
                  editor.putString("cityName", itemValue);
                  editor.commit();
                  WeatherList.getInstance().addWeather(weatherInfo);
                  finish();
-
              }
-
     }
